@@ -1,0 +1,40 @@
+<script type="text/x-template" id="intents">
+    <div class="row">
+            <div>
+                <h1 style="font-size: 30px;">Intents
+                    <button class="btn btn-primary pull-right add">Add</button>
+                </h1>
+        
+                <div class="agent-list">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width:25%;">Intent</th>
+                                <th style="width:54%;">Text</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(data,index) in intenttdata.rasa_nlu_data.common_examples">
+                                <td>
+                                    <input class="form-control" style="width:90%;" type="text" v-model="data.intent">
+                                </td>
+                                <td>
+                                    <input class="form-control" style="width:100%;" type="text" v-model="data.text">
+                                </td>
+                                <td>
+                                    <button class="btn btn-info">
+                                        <i class="fa fa-plus-circle"></i>&nbsp;Add Entities</button>
+                                    <button class="btn btn-danger" v-on:click="removeIntent()">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button class="btn btn-success" v-if="index == intenttdata.rasa_nlu_data.common_examples.length -1" v-on:click="addIntent()">
+                                        <i class="fa fa-plus"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+</script>

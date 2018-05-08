@@ -1,0 +1,22 @@
+<div style="float: left;">
+        {{{message}}}
+        <img src="{{trackerimage}}"/>
+
+        {{#each attachments}}
+    <div style="margin: 10px;float:left">
+<a href="{{{this.path}}}" download style="
+    font: bold 11px Arial;
+    text-decoration: none;
+    background-color: #0095ff;
+    color: #fafafb;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    float: left;
+    border-bottom: 1px solid #07c;
+    border-left: 1px solid #CCCCCC;
+    display: inline-block;">Download {{ this.filename }}</a></div>
+{{/each}}
+
+</div>
+<br>
+<br>
